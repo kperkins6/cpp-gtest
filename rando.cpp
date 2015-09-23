@@ -19,13 +19,18 @@ bool Rando::shouldWorry(bool childASmile, bool childBSmile, bool childCSmile)
  **/
 bool Rando::isDivisibleBy(int first, int second)
 {
-    if ( first == 0 && second == 0)
+    if ( first == 0 || second == 0)
         throw -1; //This is the exception that we throw, exception -1
-    if ( !(first % second))
+    else if ( !(first % second)) {
+        //throw -2; //Specifies first returned correctly
         return true;
-    else if (!(second % first))
+    }
+    else if (!(second % first)) {
+        //throw -3; //Specifies second returned true
         return true;
-    return false;
+    }
+    //throw -4;
+    return false; //Not Divisible
 }// 0,0  5,0 4,2 3,11  4,4 Do test cases for all of these
 
 /**
